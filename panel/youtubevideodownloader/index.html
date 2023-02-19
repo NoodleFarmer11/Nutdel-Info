@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutdel Youtube Video Downloader</title>
+    <script src="./removeBanner.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    </header>
+    <div class="main">
+        <section>
+        <h1>Nutdel Panel - Tool Tải Video Youtube</h1>
+        <div class="link-container">
+            <label for="">Địa Chỉ Video</label>
+            <input type="text" class="link" name="link" placeholder="Link Video Cần Tải" required>
+        </div>
+        <div class="format-container">
+            <label for="">Độ Phân Giải & Dạng</label>
+            <select name="" id="" class="format" required>
+                <option selected disabled> Chọn Độ Phân Giải & Dạng</option>
+                <option value="mp3">Nhạc - MP3 (128kbps)</option>
+                <option value="mp4a">Video - MP4 - 144p SD</option>
+                <option value="360">Video - MP4 - 360p SD</option>
+                <option value="480">Video - MP4 - 480p SD</option>
+                <option value="720">Video - MP4 - 720p HD</option>
+                <option value="1080">Video - MP4 - 1080p Full HD</option>    
+            </select>
+        </div>
+        <div class="button-container">
+            <button class="btn" type="submit">Nhấn Để Tải Video</button>
+        </div>
+    </section>
+    </div>
+    
+    <script>
+        $(".btn").click(function(){
+            var link = $(".link").val();
+            var format =$(".format").children("option:selected").val();
+            var src=""+link+"="+format+"";
+            download(link,format);     
+        });
+        function download(link,format){
+            $('.button-container').html('<iframe style ="height:50px; border:none;overflow:hidden;" src="https://loader.to/api/button/?url='+ link+'&f='+format+'"><iframe>');
+        }
+    </script>
+    
+</body>
+</html>
